@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PolovniAutomobiliCucumber" thread-count="1" data-provider-thread-count="1">
+    <parameter name="browser" value="CHROME"/>
+    <parameter name="env" value="PROD"/>
+    <parameter name="quit" value="YES"/>
+    <parameter name="wait" value="30"/>
+
+    <test name="Pretraga automobila marke Audi,BMW,Mercedes,Porsche ili Volkswagen">
+        <classes>
+            <class name="runners.Runner"/>
+        </classes>
+    </test>
+</suite>
