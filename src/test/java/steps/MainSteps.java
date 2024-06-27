@@ -140,7 +140,6 @@ public class MainSteps extends BaseTest {
         new HomePage(driver).checkCreditCheckbox();
     }
 
-
     @And("I click on the search button")
     public void iClickOnTheSearchButton() throws Exception {
         new HomePage(driver).clickSearchButton();
