@@ -43,6 +43,11 @@ public class MainSteps extends BaseTest {
         data = new ExcelReader().getRowData(file, sheet, Integer.parseInt(row));
     }
 
+    @Given("I load test data from {string} {string} for {string}")
+    public void iLoadTestDataFromFor(String file, String sheet, String tc_id) throws IOException {
+        data = new ExcelReader().getRowDataById(file, sheet, tc_id);
+    }
+
     @Given("I am on the polovni automobili home page and I accept cookies")
     public void iAmOnThePolovniAutomobiliHomePageAndIAcceptCookies() throws Exception {
         openApp(env);

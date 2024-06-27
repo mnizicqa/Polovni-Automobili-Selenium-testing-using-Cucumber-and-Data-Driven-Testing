@@ -25,4 +25,24 @@ public class ExcelReader {
         }
         return data;
     }
+
+    public Map<String, String> getRowDataById(String fileName, String sheetName, String tc_id) throws IOException {
+        FileInputStream fis = new FileInputStream("src/test/test_data/" + fileName + ".xlsx");
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheet(sheetName);
+
+        int lastRowNumber = sheet.getLastRowNum();
+        int lastColumnNumber = sheet.getRow(1).getLastCellNum();
+        Map<String, String> data = new HashMap<>();
+        for (int i = 0; i <= lastRowNumber; i++) {
+            if (sheet.getRow(i).getCell(0).getStringCellValue().equalsIgnoreCase(tc_id)) {
+                for (int j = 0; j < lastColumnNumber; j++) {
+                    String key = sheet.getRow(1).getCell(j).getStringCellValue();
+                    String value = sheet.getRow(i).getCell(j).getStringCellValue();
+                    data.put(key, value);
+                }
+            }
+        }
+        return data;
+    }
 }
