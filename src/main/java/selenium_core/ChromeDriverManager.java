@@ -13,4 +13,3 @@ public class ChromeDriverManager extends DriverManager {
         driver = new ChromeDriver(options);
     }
 }
-
