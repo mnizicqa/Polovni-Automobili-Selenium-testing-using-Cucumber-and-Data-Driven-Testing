@@ -54,6 +54,7 @@ Feature: Search
 #    And I click on the search button
 #    Then I should be able to see results page for selected car "Mercedes Benz C 350"
 
+  @Smoke
   Scenario Outline: Search for a desired car brand
   As a user I should be able to search for a desired car
 
